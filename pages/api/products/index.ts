@@ -1,11 +1,11 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import cors from "cors";
 import nc from "next-connect";
+import { getProducts } from "./products.services";
 
 const handler = nc()
   .use(cors())
-  .get((req, res: any) => {
-    res.send("Request to get");
+  .get(async (req, res: any) => {
+    res.json(await getProducts());
   })
   .post((req, res: any) => {
     res.json({ hola: "Request to post" });
