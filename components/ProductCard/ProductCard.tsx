@@ -1,36 +1,34 @@
-import React, { FC } from 'react'
-import Card from '@mui/material/Card';
-import Typography from '@mui/material/Typography';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import { CardActions, CardContent } from '@mui/material';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Title } from './ProductCard.style';
+import React, { FC } from "react";
+import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import { CardActions, CardContent } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Title } from "./ProductCard.style";
 
 export interface Product {
-  description: string
-  name: string
-  img: string[]
-  price: number
+  description: string;
+  name: string;
+  img: string[];
+  price: number;
 }
 interface ProductCardProps {
-  product: Product
+  product: Product;
 }
 
 export const ProductCard: FC<ProductCardProps> = ({ product }) => {
-
-  const {description, name, img, price} = product
+  const { description, name, img, price } = product;
   return (
-    
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         alt="green iguana"
-        height="auto"
+        height="200vh"
         image={img[0]}
       />
       <CardContent>
-        <Title  gutterBottom variant="h5" >
+        <Title gutterBottom variant="h5">
           {name}
         </Title>
         <Typography variant="body2" color="text.secondary">
@@ -41,12 +39,14 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
         </Typography>
       </CardContent>
       <CardActions>
-      <Button variant="contained" endIcon={<ShoppingCartIcon />}>
-        Comprar
-      </Button>
+        <Button
+          fullWidth
+          variant="contained"
+          color="primary"
+          endIcon={<ShoppingCartIcon />}>
+          Agregar
+        </Button>
       </CardActions>
     </Card>
   );
-
-}
-
+};
