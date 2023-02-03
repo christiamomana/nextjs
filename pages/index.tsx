@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import {Products} from "../components/Products/Products";
+import SwipeableTextMobileStepper from "@/components/Carousel/Carousel";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
     
+        <SwipeableTextMobileStepper/>
         <Products/>
+
       
     </>
   );

@@ -4,6 +4,8 @@ import { ContainerProducts } from './Products.style'
 import Container from '@mui/material/Container';
 import { Grid } from '@mui/material';
 import SearchBar from '../SearchBar/SearchBar'
+import SwipeableTextMobileStepper from '../Carousel/Carousel'
+
 
 export const Products = () => {
   const product: Product = { name: "ACEITE ESENCIAL DE ARGÁN", price: 150.000, description: "lorem ipsum", img: ["https://firebasestorage.googleapis.com/v0/b/tienda-9f935.appspot.com/o/products%2Faceite-2.png?alt=media&token=eef1d6e8-058d-466e-9b48-636336b2d052"] }

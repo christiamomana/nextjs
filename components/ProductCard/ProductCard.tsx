@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import { CardActions, CardContent } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Title } from './ProductCard.style';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 export interface Product {
   description: string
@@ -41,7 +42,7 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
         </Typography>
       </CardContent>
       <CardActions>
-      <Button variant="contained" endIcon={<ShoppingCartIcon />}>
+      <Button color="secondary" variant="contained" endIcon={<ShoppingCartIcon />}>
         Comprar
       </Button>
       </CardActions>

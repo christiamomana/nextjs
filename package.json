@@ -26,9 +26,13 @@
     "next-connect": "^0.13.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-swipeable-views": "^0.14.0",
+    "react-swipeable-views-utils": "^0.14.0",
     "typescript": "4.9.4"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.13"
+    "@types/cors": "^2.8.13",
+    "@types/react-swipeable-views": "^0.13.1",
+    "@types/react-swipeable-views-utils": "^0.13.4"
   }
 }
