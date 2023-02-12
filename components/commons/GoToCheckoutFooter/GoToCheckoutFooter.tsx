@@ -1,12 +1,13 @@
 import { Button } from "@mui/material";
 import React from "react";
 import { Content } from "./GoToCheckoutFooter.style";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useAppContext } from "src/context/AppContext";
+import { formatterCurrency } from "src/utils/utils";
+import Link from "next/link";
 
 export const GoToCheckoutFooter = () => {
   const {
-    shoppingCart: { products },
+    shoppingCart: { products, total },
   } = useAppContext();
   if (!products?.length) {
     return null;
@@ -14,13 +15,15 @@ export const GoToCheckoutFooter = () => {
   return (
     <Content>
       <div>
-        <Button
-          fullWidth
-          variant="contained"
-          color="primary"
-          endIcon={<ShoppingCartIcon />}>
-          Ir a Pagar
-        </Button>
+        <Link href="/summary">
+          <Button
+            fullWidth
+            variant="contained"
+            color="primary"
+            endIcon={<>{formatterCurrency(total)}</>}>
+            <div>Ir a Pagar</div>
+          </Button>
+        </Link>
       </div>
     </Content>
   );
