@@ -17,5 +17,6 @@ export const Products = () => {
         ))}
       </Grid>
     </ContainerProducts>
+
   );
 };

@@ -1,7 +1,9 @@
 import { createTheme, Portal, ThemeProvider } from "@mui/material";
 import React from "react";
+import Footer from "../commons/Footer/Footer";
 import { GoToCheckoutFooter } from "../commons/GoToCheckoutFooter/GoToCheckoutFooter";
 import ResponsiveAppBar from "../commons/ResponsiveAppBar/ResponsiveAppBar";
+
 
 export default function Layout({ children }: { children: any }) {
   const darkTheme = createTheme({
@@ -34,6 +36,8 @@ export default function Layout({ children }: { children: any }) {
       <Portal>
         <GoToCheckoutFooter />
       </Portal>
+      <Footer/>
+
     </ThemeProvider>
   );
 }
