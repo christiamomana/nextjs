@@ -8,14 +8,9 @@ const Search = styled("div")(({ theme }) => ({
   position: "relative",
   backgroundColor: alpha(theme.palette.common.white, 0.15),
   marginBottom: "15px",
-<<<<<<< HEAD
-  marginTop: "15px",
-  
-=======
   color: "#000",
   boxShadow:
     "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)",
->>>>>>> 76ff1009d0cfa304eea69926e71ca15b40985571
 
   "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
