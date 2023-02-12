@@ -11,13 +11,18 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-
 import AdbIcon from "@mui/icons-material/Adb";
+import { useAppContext } from "src/context/AppContext";
+import { Badge } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/Store";
 
 const pages = [""];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
+  const {
+    shoppingCart: { products },
+  } = useAppContext();
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -125,6 +130,18 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
+          <Box sx={{ flexGrow: 0, paddingRight: 1 }}>
+            <Tooltip title="Open settings">
+              <IconButton
+                size="large"
+                aria-label="show 4 new mails"
+                color="inherit">
+                <Badge badgeContent={products?.length} color="error">
+                  <ShoppingCartIcon />
+                </Badge>
+              </IconButton>
+            </Tooltip>
+          </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

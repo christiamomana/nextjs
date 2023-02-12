@@ -6,36 +6,35 @@ import Button from "@mui/material/Button";
 import { CardActions, CardContent } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Title } from "./ProductCard.style";
-
-export interface Product {
-  description: string;
-  name: string;
-  img: string[];
-  price: number;
-}
-interface ProductCardProps {
-  product: Product;
-}
+import { ProductCardProps } from "src/models/product.model";
+import { useAppContext } from "src/context/AppContext";
 
 export const ProductCard: FC<ProductCardProps> = ({ product }) => {
-  const { description, name, img, price } = product;
+  const {
+    shoppingCart: { setProducts },
+  } = useAppContext();
+
+  const addProdduct = () => {
+    setProducts((previous) => [...previous, product]);
+  };
+
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         alt="green iguana"
         height="200vh"
-        image={img[0]}
+        image={product?.img?.[0]}
       />
       <CardContent>
         <Title gutterBottom variant="h5">
-          {name}
+          {product?.name}
         </Title>
         <Typography variant="body2" color="text.secondary">
-          {description}
+          {product?.description}
         </Typography>
         <Typography gutterBottom variant="h5" component="div">
-          {String(price)}
+          {String(product?.price)}
         </Typography>
       </CardContent>
       <CardActions>
@@ -43,7 +42,8 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
           fullWidth
           variant="contained"
           color="primary"
-          endIcon={<ShoppingCartIcon />}>
+          endIcon={<ShoppingCartIcon />}
+          onClick={addProdduct}>
           Agregar
         </Button>
       </CardActions>
