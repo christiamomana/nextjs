@@ -35,15 +35,15 @@ export const products: Product[] = [
   },
   {
     name: "BICARBONATO DE SODIO",
-    price: 0,
+    price: 3333,
     description: "Producto por encargo",
     img: [
       "https://firebasestorage.googleapis.com/v0/b/tienda-9f935.appspot.com/o/products%2Fsal.png?alt=media&token=0063655f-1433-4bcd-8e38-4cc01a82a400",
     ],
   },
   {
-    name: "BICARBONATO DE SODIO",
-    price: 0,
+    name: "BICARBONATO DE SODIO 2",
+    price: 23330,
     description: "Producto por encargo",
     img: [
       "https://firebasestorage.googleapis.com/v0/b/tienda-9f935.appspot.com/o/products%2Fsal.png?alt=media&token=0063655f-1433-4bcd-8e38-4cc01a82a400",

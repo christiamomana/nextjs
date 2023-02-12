@@ -4,6 +4,9 @@ const nextConfig = {
   env: {
     backendUrl: "http://localhost:4000/api",
   },
+  images: {
+    domains: ["firebasestorage.googleapis.com"],
+  },
 };
 
 module.exports = nextConfig;

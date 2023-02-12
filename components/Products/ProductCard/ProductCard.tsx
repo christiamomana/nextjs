@@ -15,7 +15,11 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
   } = useAppContext();
 
   const addProdduct = () => {
-    setProducts((previous) => [...previous, product]);
+    setProducts((previous) => {
+      const products = [...previous, product];
+      sessionStorage.setItem("products", JSON.stringify(products));
+      return products;
+    });
   };
 
   return (

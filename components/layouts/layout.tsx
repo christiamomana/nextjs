@@ -1,4 +1,4 @@
-import { createTheme, Portal, ThemeProvider } from "@mui/material";
+import { createTheme, Portal, ThemeProvider, Toolbar } from "@mui/material";
 import React from "react";
 import { GoToCheckoutFooter } from "../commons/GoToCheckoutFooter/GoToCheckoutFooter";
 import ResponsiveAppBar from "../commons/ResponsiveAppBar/ResponsiveAppBar";
@@ -30,10 +30,8 @@ export default function Layout({ children }: { children: any }) {
   return (
     <ThemeProvider theme={darkTheme}>
       <ResponsiveAppBar />
+      <Toolbar />
       <main>{children}</main>
-      <Portal>
-        <GoToCheckoutFooter />
-      </Portal>
     </ThemeProvider>
   );
 }

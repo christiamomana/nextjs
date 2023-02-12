@@ -1,9 +1,10 @@
 import React from "react";
 import { ProductCard } from "./ProductCard/ProductCard";
 import { ContainerProducts } from "./Products.style";
-import { Grid } from "@mui/material";
+import { Grid, Portal } from "@mui/material";
 import SearchBar from "../SearchBar/SearchBar";
 import { products } from "src/models/producs.data";
+import { GoToCheckoutFooter } from "../commons/GoToCheckoutFooter/GoToCheckoutFooter";
 
 export const Products = () => {
   return (
@@ -16,6 +17,9 @@ export const Products = () => {
           </Grid>
         ))}
       </Grid>
+      <Portal>
+        <GoToCheckoutFooter />
+      </Portal>
     </ContainerProducts>
   );
 };

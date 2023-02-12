@@ -12,7 +12,7 @@ const config: FirebaseOptions = {
   measurementId: "G-PND9V9KXG7",
 };
 
-function createFirebaseApp(config: FirebaseOptions) {
+export function createFirebaseApp(config: FirebaseOptions) {
   try {
     return getApp();
   } catch {
@@ -20,6 +20,12 @@ function createFirebaseApp(config: FirebaseOptions) {
   }
 }
 
-const firebaseApp = createFirebaseApp(config);
-export const database = getFirestore(firebaseApp);
-export const auth = getAuth(firebaseApp);
+export const getProvider = () => {
+  const firebaseApp = createFirebaseApp(config);
+  const database = getFirestore(firebaseApp);
+  const auth = getAuth(firebaseApp);
+  return {
+    database,
+    auth,
+  };
+};
